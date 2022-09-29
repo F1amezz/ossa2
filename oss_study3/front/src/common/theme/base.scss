@@ -1,0 +1,78 @@
+// 主题背景颜色
+$background-color: #409eff !default;
+// 主题文字颜色
+$text-color: #ffffff !default;
+
+//背景颜色
+.el-header > div,
+.right > .right-item,
+.el-footer,
+.el-button--primary,
+.expandBtn,
+.expandBtn:hover,
+.expandBtn:focus,
+.el-checkbox__input.is-checked .el-checkbox__inner {
+	background: $background-color !important;
+}
+//文字颜色和背景颜色相同
+.el-button--text,
+.el-button--primary:hover,
+.el-button--primary:focus,
+.el-button--default:hover,
+.el-button--default:focus,
+.el-tabs__item:hover,
+.el-tabs__item.is-active,
+.el-aside .el-menu-item.is-active,
+.el-dropdown-menu .el-dropdown-menu__item:hover,
+.el-scrollbar .el-select-dropdown__item.selected,
+.el-pagination li:hover,
+.el-pagination li.active,
+.el-pagination button:hover,
+.message-header,
+.el-tree .is-current .el-tree-node__label {
+	color: $background-color !important;
+}
+//文字颜色自定义
+#logo,
+.expandBtn,
+.expandBtn:hover,
+.expandBtn:focus,
+.el-menu--horizontal.menu > .el-submenu i,
+.el-menu--horizontal.menu > .el-menu-item i,
+.el-button--primary,
+.el-button--primary:hover,
+.el-button--primary:focus,
+.el-header .el-menu-item.is-active,
+.el-header .el-submenu .el-submenu__title,
+.el-header .el-menu-item,
+.el-footer {
+	color: $text-color !important;
+}
+
+//边框颜色
+.el-button--primary,
+.el-button--primary:hover,
+.el-button--default:hover,
+.el-checkbox__input.is-focus .el-checkbox__inner {
+	border-color: $background-color !important;
+}
+
+.el-tree .is-current .el-tree-node__children .el-tree-node__label {
+	color: #606266 !important;
+}
+
+.el-menu--horizontal.menu > .el-submenu:hover i,
+.el-menu--horizontal.menu > .el-menu-item:hover i,
+.el-header .el-submenu:hover .el-submenu__title,
+.el-header .el-menu-item:hover {
+	color: #000000 !important;
+}
+
+.el-menu--horizontal > .el-submenu.is-active .el-submenu__title {
+	border-bottom: none !important;
+}
+
+.el-menu-item i{
+	width: 20px;
+	margin-right: 5px;
+}

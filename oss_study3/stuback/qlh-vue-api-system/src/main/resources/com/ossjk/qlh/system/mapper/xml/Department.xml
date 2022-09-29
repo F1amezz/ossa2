@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.system.mapper.DepartmentMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.system.entity.Department">
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="pid" property="pid" />
+		<result column="sort" property="sort" />
+		<result column="level" property="level" />
+		<result column="remarks" property="remarks" />
+		<result column="code" property="code" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crtm,
+		mdtm,
+		crer,
+		mder,
+		id,
+		name,
+		pid,
+		sort,
+		level,
+		remarks,
+		code
+	</sql>
+
+	<select id="selectByUid" resultType="com.ossjk.qlh.system.entity.Department">
+			select * from department d where
+		       d.id in (select rd.did from role_department rd where
+		     rd.rid in ( select ur.rid from student_role ur where ur.uid = #{uid})) ORDER BY d.level,d.sort
+	</select>
+
+</mapper>

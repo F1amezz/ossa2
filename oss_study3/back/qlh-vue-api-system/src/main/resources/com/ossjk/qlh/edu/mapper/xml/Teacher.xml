@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.edu.mapper.TeacherMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.edu.entity.Teacher">
+		<result column="crtm" property="crtm" />
+		<result column="crer" property="crer" />
+		<result column="mdtm" property="mdtm" />
+		<result column="mder" property="mder" />
+		<result column="id" property="id" />
+		<result column="lname" property="lname" />
+		<result column="pwd" property="pwd" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="wxuid" property="wxuid" />
+		<result column="phone" property="phone" />
+		<result column="state" property="state" />
+		<result column="remk" property="remk" />
+		<result column="sex" property="sex" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crtm,
+		crer,
+		mdtm,
+		mder,
+		id,
+		lname,
+		pwd,
+		name,
+		age,
+		wxuid,
+		phone,
+		state,
+		remk,
+		sex
+	</sql>
+
+</mapper>

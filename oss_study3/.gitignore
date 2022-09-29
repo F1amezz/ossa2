@@ -1,0 +1,33 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+/back/.idea
+/back/qlh-vue-api-system/target
+/back/qlh-vue-config/target
+/back/qlh-vue-core/target
+/back/logs
+/front/node_modules
+/front/dist
+/stuback/qlh-vue-api-system/target
+/stuback/qlh-vue-config/target
+/stuback/qlh-vue-core/target
+/stuback/.idea
+/stuback/logs
+/stufront/node_modules
+/stufront/dist
+/back/.idea
+/back/logs
+/back/oss-study3.iml
+/back/qlh-vue-api-system/qlh-vue-api-system.iml
+/stuback/stu-study3.iml
+/stuback/qlh-vue-api-system/qlh-vue-api-system.iml
+/back/qlh-vue-api-system/src/main/resources/application-run.yml

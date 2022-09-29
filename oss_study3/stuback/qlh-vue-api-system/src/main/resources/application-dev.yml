@@ -1,0 +1,85 @@
+jwt:
+  secret: ossjk
+  duration: 72000000
+  flush: 18000000
+resource:
+  mappers:
+    - uri: /statics/head
+      file: D:\imgs
+    - uri: /statics/excels
+      file: D:\imgs
+    - uri: /statics/exam
+      file: D:\imgs\exam
+
+server:
+  port: 8046
+  servlet:
+    context-path: /study3stu
+  compression:
+    enabled: true  # 开启响应压缩
+    mime-types:  # 支持的压缩类型
+      - application/json
+      - application/xml
+      - application/javascript
+      - text/html
+      - text/xml
+      - text/plain
+      - text/css
+      - text/javascript
+    min-response-size: 2048
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:mysql://192.168.1.49:3306/study3?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: rZ401Cs
+#    password: rZ401Cs
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    validationQuery: select 1
+  redis:
+    database: 5
+    host: localhost
+    password:
+    port: 6379
+    timeout: 0
+    lettuce:
+      pool:
+        max-active: 10   #最大连接数据库连接数,设 0 为没有限制
+        max-idle: 8     #最大空闲连接中的数量,设 0 为没有限制
+        max-wait: -1ms  #最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制。
+        min-idle: 1     #最小空闲连接中的数量,设 0 为没有限制
+mybatis:
+  mapperLocations: classpath:com/ossjk/qlh/*/mapper/xml/*.xml
+mybatis-plus:
+  configuration:
+    mapUnderscoreToCamelCase: true
+  mapper-locations: classpath:com/ossjk/qlh/*/mapper/xml/*.xml
+  typeAliasesPackage: com.ossjk.qlh.*.entity
+  global-config:
+    db-config:
+      id-type: UUID
+      field-strategy: NOT_EMPTY
+      db-type: MYSQL
+
+wx:
+  miniapp:
+    configs:
+      - appid: wxb5f80fe319f2e2dc
+        secret: dea11ec5c409bf1d610f489662ae14db
+wechat:
+  open:
+    app-id: wx6debffb01fd997ce #设置微信三方平台的appid
+    secret: e25a700439cb2a3e8932e03895f88625 #设置微信三方平台的app secret
+    redirect-uri: http://winx.ossjk.com/ossjkwin/wechatLogin  #微信扫码成功后重定向地址
+    bing-call-back-uri: http://127.0.0.1:8099/wechatBind?uid=%s #没有绑定账号的回调地址
+    web-call-back-uri: http://127.0.0.1:8099/tokenLogin?token=%s #微信和已有账号登录成功的回调地址
+    fail-call-backUri: http://127.0.0.1:8099/failLogin?msg=%s #微信和已有账号登录失败的回调地址（如：帐号禁用情况）
+aliyun:
+  oss:
+    access-key-id:  #访问身份验证中用到用户标识
+    access-key-secret:  #用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    endpoint:  #oss对外服务的访问域名
+    bucket-name:  #oss的存储空间
+knife4j:
+  enable: true

@@ -1,0 +1,72 @@
+#logo {
+	color: #000000 !important;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.bgImg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.login-card {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	text-align: center;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: '';
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.box-card {
+	width: 400px;
+	padding-bottom: 10px;
+}
+
+#loginPageText {
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	background: black;
+	left: 0;
+	right: 0;
+	color: #e0dfdf;
+	height: 30px;
+	text-align: center;
+}
+
+.verifyCode {
+	text-align: left;
+	.verifyCode-code {
+		width: 240px;
+	}
+	.verifyCode-img {
+		vertical-align: bottom;
+		width: 100px;
+		height: 40px;
+		margin-left: 10px;
+	}
+}
+.otherLogin {
+	text-align: right;
+	.otherLogin-icon {
+		cursor: pointer;
+		margin-left: 10px;
+		vertical-align: bottom;
+		width: 20px;
+	}
+}

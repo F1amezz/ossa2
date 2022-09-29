@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.interview.mapper.PostsMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.interview.entity.Posts">
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="company" property="company" />
+		<result column="maxneed" property="maxneed" />
+		<result column="exps" property="exps" />
+		<result column="xueli" property="xueli" />
+		<result column="sarry" property="sarry" />
+		<result column="tech" property="tech" />
+		<result column="remark" property="remark" />
+		<result column="bgntm" property="bgntm" />
+		<result column="endtm" property="endtm" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		mder,
+		crtm,
+		mdtm,
+		id,
+		name,
+		company,
+		maxneed,
+		exps,
+		xueli,
+		sarry,
+		tech,
+		remark,
+		bgntm,
+		endtm
+	</sql>
+
+</mapper>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.stus.mapper.StudentMapper">
+
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.stus.entity.Student">
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="id" property="id" />
+		<result column="mobile" property="mobile" />
+		<result column="remarks" property="remarks" />
+		<result column="school" property="school" />
+		<result column="professional" property="professional" />
+		<result column="nativePlace" property="nativeplace" />
+		<result column="comeTime" property="cometime" />
+		<result column="relationship" property="relationship" />
+		<result column="rname" property="rname" />
+		<result column="rphone" property="rphone" />
+		<result column="schoolTime" property="schooltime" />
+		<result column="idCard" property="idcard" />
+		<result column="describes" property="describes" />
+		<result column="state" property="state" />
+		<result column="cid" property="cid" />
+		<result column="historytime" property="historytime" />
+		<result column="historyclass" property="historyclass" />
+		<result column="groupleader" property="groupleader" />
+		<result column="adress" property="adress" />
+		<result column="wxappuid" property="wxappuid" />
+		<result column="wxappopenid" property="wxappopenid" />
+		<result column="head" property="head" />
+		<result column="lname" property="lname" />
+		<result column="name" property="name" />
+		<result column="pwd" property="pwd" />
+		<result column="birth" property="birth" />
+		<result column="sex" property="sex" />
+		<result column="email" property="email" />
+		<result column="isdisable" property="isdisable" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+				crtm,
+		mdtm,
+		crer,
+		mder,
+		id,
+		mobile,
+		remarks,
+		school,
+		professional,
+		nativePlace,
+		comeTime,
+		relationship,
+		rname,
+		rphone,
+		schoolTime,
+		idCard,
+		describes,
+		state,
+		cid,
+		historytime,
+		historyclass,
+		groupleader,
+		adress,
+		wxappuid,
+		wxappopenid,
+		head,
+		lname,
+		name,
+		pwd,
+		birth,
+		sex,
+		email,
+		isdisable
+	</sql>
+
+</mapper>

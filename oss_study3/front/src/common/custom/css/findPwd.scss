@@ -1,0 +1,20 @@
+.background {
+	height: 100%;
+	width: 100%;
+	background-color: #dadada;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.findPwd-frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	text-align: center;
+}
+.box-card{
+	width: 350px;
+}

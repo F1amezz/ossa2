@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.system.mapper.AreaMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap"
+		type="com.ossjk.qlh.system.entity.Area">
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="pid" property="pid" />
+		<result column="simplename" property="simplename" />
+		<result column="level" property="level" />
+		<result column="citycode" property="citycode" />
+		<result column="zipcode" property="zipcode" />
+		<result column="mername" property="mername" />
+		<result column="lng" property="lng" />
+		<result column="lat" property="lat" />
+		<result column="pinyin" property="pinyin" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id,
+		name,
+		pid,
+		simplename,
+		level,
+		citycode,
+		zipcode,
+		mername,
+		lng,
+		lat,
+		pinyin
+	</sql>
+	<select id="getColumnByField" resultType="java.lang.Object">
+		select ${columnName} from ${tableName} where ${whereName} = #{whereValue}
+	</select>
+</mapper>

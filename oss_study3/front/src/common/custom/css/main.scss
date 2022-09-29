@@ -1,0 +1,45 @@
+.el-row {
+	height: 50%;
+	.el-col {
+		height: 100%;
+		.el-card {
+			height: 100%;
+		}
+	}
+}
+#headImg {
+	height: 150px;
+	width: 150px;
+	border-radius: 75px;
+}
+.userInfo {
+		.userInfo-body {
+			height: 100%;
+
+			.userHead {
+				text-align: center;
+				padding-left: 10px;
+			}
+
+			.info {
+				border-left: 1px solid #eae6e6;
+				font-size: 16px;
+				padding: 0 0 0 15px;
+				color: #a2a2a2;
+
+				>div {
+					margin-bottom: 10px;
+				}
+
+			}
+		}
+	}
+.operation {
+	margin-bottom: 10px;
+	.el-button:first-child{
+		margin-left: 10px;
+	}
+	.el-button{
+		margin-top: 10px;
+	}
+}

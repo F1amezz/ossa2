@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.system.mapper.LoginrecordMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.system.entity.Loginrecord">
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="id" property="id" />
+		<result column="uid" property="uid" />
+		<result column="ip" property="ip" />
+		<result column="useragent" property="useragent" />
+		<result column="logintime" property="logintime" />
+		<result column="loginresult" property="loginresult" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crtm,
+		mdtm,
+		crer,
+		mder,
+		id,
+		uid,
+		ip,
+		useragent,
+		logintime,
+		loginresult
+	</sql>
+	<select id="pageVo" resultType="com.ossjk.qlh.system.vo.LoginrecordVo">
+		SELECT
+		l.*,
+		u.name uname,
+		u.mobile mobile
+		FROM
+		loginrecord l
+		LEFT JOIN USER u ON u.id = l.uid
+		${ew.customSqlSegment}
+	</select>
+
+	<select id="pageVo" resultType="com.ossjk.qlh.system.vo.LoginrecordVo">
+		SELECT
+		l.*,
+		u.name uname,
+		u.mobile mobile
+		FROM
+		loginrecord l
+		LEFT JOIN USER u ON u.id = l.uid
+		${ew.customSqlSegment}
+	</select>
+	<select id="getVoById" resultType="com.ossjk.qlh.system.vo.LoginrecordVo">
+		SELECT
+		l.*,
+		u.name uname,
+		u.mobile mobile
+		FROM
+		loginrecord l
+		LEFT JOIN USER u ON u.id = l.uid
+		<where>
+			l.id=#{id}
+		</where>
+	</select>
+	<select id="countYear" resultType="java.lang.Integer">
+		select cunt from
+		(select * from (
+		select "01" m from DUAL
+		UNION select "02" m from DUAL
+		UNION select "03" m from DUAL
+		UNION select "04" m from DUAL
+		UNION select "05" m from DUAL
+		UNION select "06" m from DUAL
+		UNION select "07" m from DUAL
+		UNION select "08" m from DUAL
+		UNION select "09" m from DUAL
+		UNION select "10" m from DUAL
+		UNION select "11" m from DUAL
+		UNION select "12" m from DUAL
+		)t) a
+		LEFT JOIN
+		(select count(*) cunt , DATE_FORMAT(logintime,'%m') mon from loginrecord where uid = #{uid} and  logintime like CONCAT('%',#{year},'%') GROUP BY DATE_FORMAT(logintime,'%m')) b on b.mon = a.m ORDER BY a.m asc
+	</select>
+</mapper>

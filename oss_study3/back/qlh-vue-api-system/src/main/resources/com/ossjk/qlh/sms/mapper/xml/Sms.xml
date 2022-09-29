@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.sms.mapper.SmsMapper">
+
+    <!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.sms.entity.Sms">
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="sid" property="sid" />
+		<result column="rid" property="rid" />
+		<result column="rstate" property="rstate" />
+		<result column="content" property="content" />
+		<result column="level" property="level" />
+		<result column="type" property="type" />
+		<result column="stime" property="stime" />
+		<result column="rtime" property="rtime" />
+		<result column="file" property="file" />
+		<result column="url" property="url" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crtm,
+		mdtm,
+		crer,
+		mder,
+		id,
+		title,
+		sid,
+		rid,
+		rstate,
+		content,
+		level,
+		type,
+		stime,
+		rtime,
+		file,
+		url
+	</sql>
+    <select id="selectPageVo" resultType="com.ossjk.qlh.sms.vo.SmsVo">
+		select s.*,u.name sname from sms s
+		LEFT JOIN  user  u  on s.sid=u.id
+		${ew.customSqlSegment}
+	</select>
+    <select id="getVoById" resultType="com.ossjk.qlh.sms.vo.SmsVo">
+		select s.*,u.name sname from sms s
+		LEFT JOIN  user  u  on s.sid=u.id
+		<where>
+            s.id=#{id}
+        </where>
+	</select>
+</mapper>

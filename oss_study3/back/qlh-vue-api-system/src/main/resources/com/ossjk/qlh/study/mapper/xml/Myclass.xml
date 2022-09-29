@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.study.mapper.MyclassMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.study.entity.Myclass">
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="id" property="id" />
+		<result column="head" property="head" />
+		<result column="name" property="name" />
+		<result column="mobile" property="mobile" />
+		<result column="tname" property="tname" />
+		<result column="clname" property="clname" />
+		<result column="courname" property="courname" />
+		<result column="teachname" property="teachname" />
+		<result column="monitor" property="monitor" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crtm,
+		mdtm,
+		crer,
+		mder,
+		id,
+		head,
+		name,
+		mobile,
+		tname,
+		clname,
+		courname,
+		teachname,
+		monitor
+	</sql>
+
+</mapper>

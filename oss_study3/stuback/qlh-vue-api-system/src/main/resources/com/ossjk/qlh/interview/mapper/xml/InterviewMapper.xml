@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.interview.mapper.InterviewMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.interview.entity.Interview">
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="stuid" property="stuid" />
+		<result column="cmpname" property="cmpname" />
+		<result column="exam" property="exam" />
+		<result column="postid" property="postid" />
+		<result column="mszbqk" property="mszbqk" />
+		<result column="msscore" property="msscore" />
+		<result column="mstm" property="mstm" />
+		<result column="msresult" property="msresult" />
+		<result column="mszj" property="mszj" />
+		<result column="msdp" property="msdp" />
+		<result column="mslast" property="mslast" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crer,
+		mder,
+		crtm,
+		mdtm,
+		id,
+		stuid,
+		cmpname,
+		postid,
+		exam,
+		mszbqk,
+		msscore,
+		mstm,
+		msresult,
+		mszj,
+		msdp,
+		mslast
+	</sql>
+
+</mapper>

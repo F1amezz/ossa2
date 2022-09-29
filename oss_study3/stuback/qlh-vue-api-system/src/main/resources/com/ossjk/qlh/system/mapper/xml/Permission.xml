@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.system.mapper.PermissionMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.system.entity.Permission">
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="type" property="type" />
+		<result column="pid" property="pid" />
+		<result column="sort" property="sort" />
+		<result column="level" property="level" />
+		<result column="code" property="code" />
+		<result column="icon" property="icon" />
+		<result column="url" property="url" />
+		<result column="component" property="component" />
+		<result column="opentype" property="opentype" />
+		<result column="remarks" property="remarks" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crtm,
+		mdtm,
+		crer,
+		mder,
+		id,
+		name,
+		type,
+		pid,
+		sort,
+		level,
+		code,
+		icon,
+		url,
+		component,
+		opentype,
+		remarks
+	</sql>
+
+	<select id="selectByUid" resultType="com.ossjk.qlh.system.entity.Permission">
+		select * from permission p where p.id in (
+		select rp.pid from role_permission rp where
+		rp.rid in ( select ur.rid from student_role ur where ur.uid = #{uid})) ORDER BY p.level,p.sort
+	</select>
+</mapper>

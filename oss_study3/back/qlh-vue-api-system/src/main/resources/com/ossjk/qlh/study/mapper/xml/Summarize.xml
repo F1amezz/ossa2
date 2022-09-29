@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.study.mapper.SummarizeMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.study.entity.Summarize">
+		<result column="crtm" property="crtm" />
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="mdtm" property="mdtm" />
+		<result column="id" property="id" />
+		<result column="sname" property="sname" />
+		<result column="cname" property="cname" />
+		<result column="tname" property="tname" />
+		<result column="course" property="course" />
+		<result column="content" property="content" />
+		<result column="readst" property="readst" />
+		<result column="subtime" property="subtime" />
+		<result column="chetime" property="chetime" />
+		<result column="a1" property="a1" />
+		<result column="a2" property="a2" />
+		<result column="a3" property="a3" />
+		<result column="a4" property="a4" />
+		<result column="a5" property="a5" />
+		<result column="a6" property="a6" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crtm,
+		crer,
+		mder,
+		mdtm,
+		id,
+		sname,
+		cname,
+		tname,
+		course,
+		content,
+		readst,
+		subtime,
+		chetime,
+		a1,
+		a2,
+		a3,
+		a4,
+		a5,
+		a6
+	</sql>
+
+</mapper>

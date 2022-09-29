@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ossjk.qlh.system.mapper.UserMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.ossjk.qlh.system.entity.User">
+		<result column="crtm" property="crtm" />
+		<result column="mdtm" property="mdtm" />
+		<result column="crer" property="crer" />
+		<result column="mder" property="mder" />
+		<result column="id" property="id" />
+		<result column="head" property="head" />
+		<result column="lname" property="lname" />
+		<result column="name" property="name" />
+		<result column="pwd" property="pwd" />
+		<result column="birth" property="birth" />
+		<result column="sex" property="sex" />
+		<result column="email" property="email" />
+		<result column="mobile" property="mobile" />
+		<result column="remarks" property="remarks" />
+		<result column="isdisable" property="isdisable" />
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		crtm,
+		mdtm,
+		crer,
+		mder,
+		id,
+		head,
+		lname,
+		name,
+		pwd,
+		birth,
+		sex,
+		email,
+		mobile,
+		remarks,
+		isdisable
+	</sql>
+	<select id="selectPageVo" resultType="com.ossjk.qlh.system.vo.UserVo">
+		select  r.id rid ,r.name rname ,d.id did ,d.name dname, u.* from user u
+		LEFT JOIN  user_role  ur  on u.id =ur.uid
+		LEFT JOIN  role  r  on ur.rid =r.id
+		LEFT JOIN  role_department  rd  on r.id =rd.rid
+		LEFT JOIN  department  d  on d.id =rd.did
+		${ew.customSqlSegment}
+	</select>
+    <select id="selectVoById" resultType="com.ossjk.qlh.system.vo.UserVo">
+		select  r.id rid ,r.name rname ,d.id did ,d.name dname, u.* from user u
+		LEFT JOIN  user_role  ur  on u.id =ur.uid
+		LEFT JOIN  role  r  on ur.rid =r.id
+		LEFT JOIN  role_department  rd  on r.id =rd.rid
+		LEFT JOIN  department  d  on d.id =rd.did
+        where u.id = #{id}
+	</select>
+</mapper>
