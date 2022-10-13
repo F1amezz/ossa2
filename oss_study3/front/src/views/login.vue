@@ -75,9 +75,9 @@ export default {
   data() {
     return {
       formParameter: {
-        name: "推荐扫码登录",
-        pwd: "",
-        code: "",
+        name: "admin",
+        pwd: "888888",
+        code: "1",
       },
       loading: false,
       systemsetting: [],

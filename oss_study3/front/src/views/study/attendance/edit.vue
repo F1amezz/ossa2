@@ -29,7 +29,9 @@
 					</el-row>
 					<el-row>
 						<el-col :span="24">
-							<el-form-item label="状态" prop="state"><el-input v-model="formParameter.state" autocomplete="off"></el-input></el-form-item>
+							<el-form-item label="状态" prop="state"><el-input v-model="formParameter.state" autocomplete="off">
+								xiao
+								</el-input></el-form-item>
 						</el-col>
 					</el-row>
 					<el-row>

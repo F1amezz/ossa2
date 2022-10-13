@@ -21,7 +21,7 @@ import java.util.Date;
  * @author: Rick.yang
  * @date: 2022-06-13 18:03:21
  */
-@ApiModel(value = "每日反馈")
+@ApiModel(value = "考勤实体")
 @Data
 public class Attendance extends BaseEntity<Attendance> {
 
@@ -37,34 +37,26 @@ public class Attendance extends BaseEntity<Attendance> {
     /**
      * 班级id
      */
-    @ApiModelProperty(value = "班级id")
+    @ApiModelProperty(value = "学生id")
     @TableField("stuid")
-    // @DbColumnMapper(columns = "name", tableName = "student", condition = "id")
     private String sid;
 
-    /**
-     * 学生name
-     */
-    @ApiModelProperty(value = "学生名字")
-    @TableField("studname")
-    // @DbColumnMapper(columns = "name", tableName = "student", condition = "id")
-    private String studname;
 
     /**
      *
      */
     @ApiModelProperty(value = "考勤日期")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd")
     @TableField("kqdate")
-    private Date kqday;
+    private Date kqdate;
 
     /**
      * 内容
      */
     @ApiModelProperty(value = "上班打卡")
-    @DateTimeFormat(pattern = "HH:mm")
-    @JSONField(format = "HH:mm")
+    @DateTimeFormat(pattern = "HH:mm:ss")
+    @JSONField(format = "HH:mm:ss")
     @TableField("chkin")
     private String chkin;
 
@@ -72,11 +64,10 @@ public class Attendance extends BaseEntity<Attendance> {
      * 已读状态（0-未读，1-已读）
      */
     @ApiModelProperty(value = "下班打卡）")
-    @DateTimeFormat(pattern = "HH:mm")
-    @JSONField(format = "HH:mm")
+    @DateTimeFormat(pattern = "HH:mm:ss")
+    @JSONField(format = "HH:mm:ss")
     @TableField("chkout")
     private String chkout;
-
 
     /**
      * 确认时间
@@ -88,14 +79,23 @@ public class Attendance extends BaseEntity<Attendance> {
     /**
      * 反馈3
      */
-    @ApiModelProperty(value = "状态，0，待判定，1:正常,2.异常")
+    @ApiModelProperty(value = "状态")
     @TableField("state")
     private Integer state;
+
+    @ApiModelProperty(value = "反馈")
+    @TableField("feedback")
+    private String feedback;
+
+    @ApiModelProperty(value = "考勤结果")
+    @TableField("result")
+    private String result;
+
 
     /**
      * 反馈4
      */
-    @ApiModelProperty(value = "备注")
+    @ApiModelProperty(value = "异常反馈")
     @TableField("remarks")
     private String remarks;
 

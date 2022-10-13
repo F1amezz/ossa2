@@ -1,7 +1,9 @@
 package com.ossjk.qlh.study.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.ossjk.qlh.study.dto.AttendanceDTO;
 import com.ossjk.qlh.study.entity.Attendance;
+import org.apache.ibatis.annotations.Param;
 
 import java.io.File;
 import java.util.List;
@@ -17,5 +19,7 @@ import java.util.List;
  */
 public interface IAttendanceService extends IService<Attendance> {
 
-    List<Attendance> parseAttendance(File file);
+    List<AttendanceDTO> parseAttendance(File file);
+
+    List<AttendanceDTO> findStuDtoByMth(String mth, String sid   );
 }

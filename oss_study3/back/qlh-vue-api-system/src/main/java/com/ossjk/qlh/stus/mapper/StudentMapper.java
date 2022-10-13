@@ -3,6 +3,7 @@ package com.ossjk.qlh.stus.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.ossjk.qlh.stus.entity.Student;
 import com.ossjk.qlh.stus.vo.StudentVO;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -29,4 +30,8 @@ public interface StudentMapper extends BaseMapper<Student> {
 
     @Select("SELECT * FROM student  WHERE `name` LIKE #{name}")
     List<Student> istuscx(String name);
+
+    @Select("select s.id  from student  s left join clazz c  on s.cid = c.id where c.name =#{cnm} and s.name=#{snm}")
+    String findSidbyClzNm_Snm(@Param("cnm") String cnm, @Param("snm")String snm);
+
 }

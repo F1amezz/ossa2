@@ -19,8 +19,8 @@ const api = {
 	remove: (params, successCallback, failCallback, exceptionCallback) => {
 		ApiUtils.deleteLoadingAjax(constant.serverUrl + "/study/attendance/remove", params, successCallback, failCallback, exceptionCallback);
 	},
-	toComfirm: (params, successCallback, failCallback, exceptionCallback) => {
-		ApiUtils.getLoadingAjax(constant.serverUrl + "/study/attendance/toComfirm", params, successCallback, failCallback, exceptionCallback);
+	toParse: (params, successCallback, failCallback, exceptionCallback) => {
+		ApiUtils.getLoadingAjax(constant.serverUrl + "/study/attendance/toParse", params, successCallback, failCallback, exceptionCallback);
 	},
 	toComfirm2: (params, successCallback, failCallback, exceptionCallback) => {
 		ApiUtils.postLoadingAjax(constant.serverUrl + "/study/attendance/toComfirm2", params, successCallback, failCallback, exceptionCallback);

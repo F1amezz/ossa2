@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ossjk.qlh.stus.entity.Student;
 import com.ossjk.qlh.stus.vo.StudentVO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -22,4 +23,6 @@ public interface IStudentService extends IService<Student> {
 
     int revise(String id);
     List<Student> istuscx(String name);
+
+    String findSidbyClzNm_Snm(  String snm,String cnm);
 }

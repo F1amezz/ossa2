@@ -20,6 +20,7 @@ public class StringUtil {
     public static final SimpleDateFormat smt4;
     public static final SimpleDateFormat smt5;
     public static final SimpleDateFormat smt6;
+    public static final SimpleDateFormat smt7;
     public static final SimpleDateFormat isoMthFormat ;
 
 
@@ -32,7 +33,7 @@ public class StringUtil {
         smt4 = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
         smt5 = new SimpleDateFormat("yyyy");
         smt6 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-
+        smt7 = new SimpleDateFormat("HH:mm");
         isoMthFormat = new SimpleDateFormat("yyyy-MM");
 
         hanMapper = new HashMap();

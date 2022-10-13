@@ -38,9 +38,11 @@ spring:
   main:
     allow-bean-definition-overriding: true
   datasource:
-    url: jdbc:mysql://125.46.62.4:81/study3?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+#    url: jdbc:mysql://125.46.62.4:81/study3?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/stusss?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: root
-    password: Maki2Wikw@919
+    password: 123456
+#    password: Maki2Wikw@919
     driver-class-name: com.mysql.cj.jdbc.Driver
     validationQuery: select 1
   redis:

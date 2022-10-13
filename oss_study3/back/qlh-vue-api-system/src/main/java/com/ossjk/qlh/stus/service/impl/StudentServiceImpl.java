@@ -36,4 +36,9 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student> impl
     public List<Student> istuscx(String name) {
         return this.baseMapper.istuscx("%" + name + "%");
     }
+
+    @Override
+    public  String findSidbyClzNm_Snm(  String snm, String cnm){
+            return this.baseMapper.findSidbyClzNm_Snm(cnm,snm);
+    }
 }
